@@ -1,0 +1,32 @@
+﻿  TitleScreen.cpp
+C:\Users\magdi\OneDrive\Pulpit\Space-Invaders\Space Invaders\TitleScreen.cpp(57,93): warning C4244: "argument": konwersja z "int" do "T", możliwa utrata danych
+C:\Users\magdi\OneDrive\Pulpit\Space-Invaders\Space Invaders\TitleScreen.cpp(57,93): warning C4244:         with
+C:\Users\magdi\OneDrive\Pulpit\Space-Invaders\Space Invaders\TitleScreen.cpp(57,93): warning C4244:         [
+C:\Users\magdi\OneDrive\Pulpit\Space-Invaders\Space Invaders\TitleScreen.cpp(57,93): warning C4244:             T=float
+C:\Users\magdi\OneDrive\Pulpit\Space-Invaders\Space Invaders\TitleScreen.cpp(57,93): warning C4244:         ]
+C:\Users\magdi\OneDrive\Pulpit\Space-Invaders\Space Invaders\TitleScreen.cpp(57,72): warning C4244: "argument": konwersja z "int" do "T", możliwa utrata danych
+C:\Users\magdi\OneDrive\Pulpit\Space-Invaders\Space Invaders\TitleScreen.cpp(57,72): warning C4244:         with
+C:\Users\magdi\OneDrive\Pulpit\Space-Invaders\Space Invaders\TitleScreen.cpp(57,72): warning C4244:         [
+C:\Users\magdi\OneDrive\Pulpit\Space-Invaders\Space Invaders\TitleScreen.cpp(57,72): warning C4244:             T=float
+C:\Users\magdi\OneDrive\Pulpit\Space-Invaders\Space Invaders\TitleScreen.cpp(57,72): warning C4244:         ]
+C:\Users\magdi\OneDrive\Pulpit\Space-Invaders\Space Invaders\TitleScreen.cpp(79,114): warning C4244: "argument": konwersja z "T" do "float", możliwa utrata danych
+C:\Users\magdi\OneDrive\Pulpit\Space-Invaders\Space Invaders\TitleScreen.cpp(79,114): warning C4244:         with
+C:\Users\magdi\OneDrive\Pulpit\Space-Invaders\Space Invaders\TitleScreen.cpp(79,114): warning C4244:         [
+C:\Users\magdi\OneDrive\Pulpit\Space-Invaders\Space Invaders\TitleScreen.cpp(79,114): warning C4244:             T=unsigned int
+C:\Users\magdi\OneDrive\Pulpit\Space-Invaders\Space Invaders\TitleScreen.cpp(79,114): warning C4244:         ]
+C:\Users\magdi\OneDrive\Pulpit\Space-Invaders\Space Invaders\TitleScreen.cpp(79,54): warning C4244: "argument": konwersja z "T" do "float", możliwa utrata danych
+C:\Users\magdi\OneDrive\Pulpit\Space-Invaders\Space Invaders\TitleScreen.cpp(79,54): warning C4244:         with
+C:\Users\magdi\OneDrive\Pulpit\Space-Invaders\Space Invaders\TitleScreen.cpp(79,54): warning C4244:         [
+C:\Users\magdi\OneDrive\Pulpit\Space-Invaders\Space Invaders\TitleScreen.cpp(79,54): warning C4244:             T=unsigned int
+C:\Users\magdi\OneDrive\Pulpit\Space-Invaders\Space Invaders\TitleScreen.cpp(79,54): warning C4244:         ]
+C:\Users\magdi\OneDrive\Pulpit\Space-Invaders\Space Invaders\TitleScreen.cpp(97,99): warning C4244: "argument": konwersja z "T" do "float", możliwa utrata danych
+C:\Users\magdi\OneDrive\Pulpit\Space-Invaders\Space Invaders\TitleScreen.cpp(97,99): warning C4244:         with
+C:\Users\magdi\OneDrive\Pulpit\Space-Invaders\Space Invaders\TitleScreen.cpp(97,99): warning C4244:         [
+C:\Users\magdi\OneDrive\Pulpit\Space-Invaders\Space Invaders\TitleScreen.cpp(97,99): warning C4244:             T=unsigned int
+C:\Users\magdi\OneDrive\Pulpit\Space-Invaders\Space Invaders\TitleScreen.cpp(97,99): warning C4244:         ]
+C:\Users\magdi\OneDrive\Pulpit\Space-Invaders\Space Invaders\TitleScreen.cpp(97,61): warning C4244: "argument": konwersja z "T" do "float", możliwa utrata danych
+C:\Users\magdi\OneDrive\Pulpit\Space-Invaders\Space Invaders\TitleScreen.cpp(97,61): warning C4244:         with
+C:\Users\magdi\OneDrive\Pulpit\Space-Invaders\Space Invaders\TitleScreen.cpp(97,61): warning C4244:         [
+C:\Users\magdi\OneDrive\Pulpit\Space-Invaders\Space Invaders\TitleScreen.cpp(97,61): warning C4244:             T=unsigned int
+C:\Users\magdi\OneDrive\Pulpit\Space-Invaders\Space Invaders\TitleScreen.cpp(97,61): warning C4244:         ]
+  Space Invaders.vcxproj -> C:\Users\magdi\OneDrive\Pulpit\Space-Invaders\Space Invaders\Debug\Space Invaders.exe

@@ -1,0 +1,145 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\magdi\\OneDrive\\Pulpit\\Space-Invaders\\Space Invaders\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F73CFF4E-5219-4726-83FD-5F929595017B}|Space Invaders.vcxproj|C:\\Users\\magdi\\OneDrive\\Pulpit\\Space-Invaders\\Space Invaders\\TitleScreen.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F73CFF4E-5219-4726-83FD-5F929595017B}|Space Invaders.vcxproj|solutionrelative:TitleScreen.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F73CFF4E-5219-4726-83FD-5F929595017B}|Space Invaders.vcxproj|C:\\Users\\magdi\\OneDrive\\Pulpit\\Space-Invaders\\Space Invaders\\TitleScreen.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F73CFF4E-5219-4726-83FD-5F929595017B}|Space Invaders.vcxproj|solutionrelative:TitleScreen.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F73CFF4E-5219-4726-83FD-5F929595017B}|Space Invaders.vcxproj|C:\\Users\\magdi\\OneDrive\\Pulpit\\Space-Invaders\\Space Invaders\\Window.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F73CFF4E-5219-4726-83FD-5F929595017B}|Space Invaders.vcxproj|solutionrelative:Window.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F73CFF4E-5219-4726-83FD-5F929595017B}|Space Invaders.vcxproj|C:\\Users\\magdi\\OneDrive\\Pulpit\\Space-Invaders\\Space Invaders\\Window.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F73CFF4E-5219-4726-83FD-5F929595017B}|Space Invaders.vcxproj|solutionrelative:Window.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F73CFF4E-5219-4726-83FD-5F929595017B}|Space Invaders.vcxproj|C:\\Users\\magdi\\OneDrive\\Pulpit\\Space-Invaders\\Space Invaders\\Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F73CFF4E-5219-4726-83FD-5F929595017B}|Space Invaders.vcxproj|solutionrelative:Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F73CFF4E-5219-4726-83FD-5F929595017B}|Space Invaders.vcxproj|C:\\Users\\magdi\\OneDrive\\Pulpit\\Space-Invaders\\Space Invaders\\Space Invaders.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F73CFF4E-5219-4726-83FD-5F929595017B}|Space Invaders.vcxproj|solutionrelative:Space Invaders.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F73CFF4E-5219-4726-83FD-5F929595017B}|Space Invaders.vcxproj|C:\\Users\\magdi\\OneDrive\\Pulpit\\Space-Invaders\\Space Invaders\\Game.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F73CFF4E-5219-4726-83FD-5F929595017B}|Space Invaders.vcxproj|solutionrelative:Game.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 182,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Window.cpp",
+              "DocumentMoniker": "C:\\Users\\magdi\\OneDrive\\Pulpit\\Space-Invaders\\Space Invaders\\Window.cpp",
+              "RelativeDocumentMoniker": "Window.cpp",
+              "ToolTip": "C:\\Users\\magdi\\OneDrive\\Pulpit\\Space-Invaders\\Space Invaders\\Window.cpp",
+              "RelativeToolTip": "Window.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-03-16T22:16:39.53Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Window.hpp",
+              "DocumentMoniker": "C:\\Users\\magdi\\OneDrive\\Pulpit\\Space-Invaders\\Space Invaders\\Window.hpp",
+              "RelativeDocumentMoniker": "Window.hpp",
+              "ToolTip": "C:\\Users\\magdi\\OneDrive\\Pulpit\\Space-Invaders\\Space Invaders\\Window.hpp",
+              "RelativeToolTip": "Window.hpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-03-16T21:32:38.56Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Game.hpp",
+              "DocumentMoniker": "C:\\Users\\magdi\\OneDrive\\Pulpit\\Space-Invaders\\Space Invaders\\Game.hpp",
+              "RelativeDocumentMoniker": "Game.hpp",
+              "ToolTip": "C:\\Users\\magdi\\OneDrive\\Pulpit\\Space-Invaders\\Space Invaders\\Game.hpp",
+              "RelativeToolTip": "Game.hpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-03-16T21:21:33.685Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TitleScreen.hpp",
+              "DocumentMoniker": "C:\\Users\\magdi\\OneDrive\\Pulpit\\Space-Invaders\\Space Invaders\\TitleScreen.hpp",
+              "RelativeDocumentMoniker": "TitleScreen.hpp",
+              "ToolTip": "C:\\Users\\magdi\\OneDrive\\Pulpit\\Space-Invaders\\Space Invaders\\TitleScreen.hpp",
+              "RelativeToolTip": "TitleScreen.hpp",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-03-16T21:54:45.677Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 182,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TitleScreen.cpp",
+              "DocumentMoniker": "C:\\Users\\magdi\\OneDrive\\Pulpit\\Space-Invaders\\Space Invaders\\TitleScreen.cpp",
+              "RelativeDocumentMoniker": "TitleScreen.cpp",
+              "ToolTip": "C:\\Users\\magdi\\OneDrive\\Pulpit\\Space-Invaders\\Space Invaders\\TitleScreen.cpp",
+              "RelativeToolTip": "TitleScreen.cpp",
+              "ViewState": "AQIAAEgAAAAAAAAAAAAAAGAAAABkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-03-16T21:54:27.267Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Space Invaders.cpp",
+              "DocumentMoniker": "C:\\Users\\magdi\\OneDrive\\Pulpit\\Space-Invaders\\Space Invaders\\Space Invaders.cpp",
+              "RelativeDocumentMoniker": "Space Invaders.cpp",
+              "ToolTip": "C:\\Users\\magdi\\OneDrive\\Pulpit\\Space-Invaders\\Space Invaders\\Space Invaders.cpp",
+              "RelativeToolTip": "Space Invaders.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-03-16T21:40:59.124Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Game.cpp",
+              "DocumentMoniker": "C:\\Users\\magdi\\OneDrive\\Pulpit\\Space-Invaders\\Space Invaders\\Game.cpp",
+              "RelativeDocumentMoniker": "Game.cpp",
+              "ToolTip": "C:\\Users\\magdi\\OneDrive\\Pulpit\\Space-Invaders\\Space Invaders\\Game.cpp",
+              "RelativeToolTip": "Game.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-03-16T21:21:56.35Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
