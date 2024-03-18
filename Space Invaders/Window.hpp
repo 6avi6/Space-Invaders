@@ -6,7 +6,7 @@
 
 class Window {
 public:
-    Window(int width, int height, std::string title);
+    Window(int width, int height, std::string title, sf::ContextSettings settings);
     ~Window();
 
     bool isOpen() const;

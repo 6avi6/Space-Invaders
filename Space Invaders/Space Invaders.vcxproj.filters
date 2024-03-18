@@ -16,6 +16,9 @@
     <Filter Include="Pliki nagłówkowe\GameObjects">
       <UniqueIdentifier>{0fbca3ab-0f87-45d0-89cc-46c7d5620594}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Pliki źródłowe\GameObjects">
+      <UniqueIdentifier>{7771b4f3-2784-4717-9d9e-6a986a67a96b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Space Invaders.cpp">
@@ -33,6 +36,15 @@
     <ClCompile Include="TitleScreen.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Pliki źródłowe\GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.hpp">
+      <Filter>Pliki nagłówkowe\GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Pliki źródłowe\GameObjects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DrawableObject.hpp">
@@ -43,6 +55,9 @@
     </ClInclude>
     <ClInclude Include="TitleScreen.hpp">
       <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.hpp">
+      <Filter>Pliki nagłówkowe\GameObjects</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

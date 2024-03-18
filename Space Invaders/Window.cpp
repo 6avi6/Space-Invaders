@@ -1,6 +1,8 @@
 #include "Window.hpp"
 
-Window::Window(int width, int height,  std::string title) : window(sf::VideoMode(width, height), title) {}
+Window::Window(int width, int height, std::string title, sf::ContextSettings settings) : window(sf::VideoMode(width, height), title, sf::Style::Default, settings) {
+    this->window.setFramerateLimit(60);
+}
 
 Window::~Window() {}
 

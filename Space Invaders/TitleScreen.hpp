@@ -3,6 +3,8 @@
 
 #include <SFML/Graphics.hpp>
 #include "Window.hpp"
+
+#include "Game.hpp"
 #include "iostream"
 class TitleScreen {
 public:
@@ -26,7 +28,6 @@ private:
     sf::RenderWindow* window;
 
 
-
     sf::Texture titleTexture;
     sf::Sprite titleSprite;
     
@@ -35,7 +36,8 @@ private:
     sf::RectangleShape playButton;
     bool isInside(const sf::Vector2f& point, const sf::RectangleShape& rectangle);
       
-    
+    Game* game;
+    void initGame();
 };
 
 #endif // TITLE_SCREEN_HPP

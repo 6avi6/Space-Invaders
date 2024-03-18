@@ -46,7 +46,7 @@ void TitleScreen::handleInput() {
     sf::Event event;
     while (this->window->pollEvent(event)) {
         //if ESC or window cross is clicked it closed window
-        if (event.type == sf::Event::KeyPressed || event.type == sf::Event::Closed) {
+        if ( event.type == sf::Event::Closed) {
             this->window->close();
         }
 
@@ -56,7 +56,11 @@ void TitleScreen::handleInput() {
             // Check if the mouse click is inside the play button
             sf::Vector2f mousePosition = sf::Vector2f(event.mouseButton.x, event.mouseButton.y);
             if (this->isInside(mousePosition, this->playButton)) {
-                std::cout << "Play" << std::endl;
+                std::cout << "Play Button clicked" << std::endl;
+                this->initGame();
+                game->run();
+
+                delete game;
             }
         }
     }
@@ -68,7 +72,7 @@ void TitleScreen::initTitleScreen(std::string wallpaperPath)
     if (!titleTexture.loadFromFile(wallpaperPath)) {
         // Handle error if texture loading fails
         // For now, let's just print an error message
-        std::cout << "Failed to load title screen texture! "<< wallpaperPath << std::endl;
+        std::cout << "TITLESCREEN::initTitleScreen(std::string wallpaperPath)::'Failed to load title screen texture!' "<< wallpaperPath << std::endl;
     }
     
     
@@ -81,8 +85,24 @@ void TitleScreen::initTitleScreen(std::string wallpaperPath)
 
 void TitleScreen::initWindow()
 {
-     this->GameWindow = new Window(800, 600, "Space Invaders");
+    sf::ContextSettings settings;
+    settings.antialiasingLevel = 8;
+     this->GameWindow = new Window(800, 600, "Space Invaders" ,settings);
     this->window=&(this->GameWindow->window);
+   
+
+    //setting window icon
+    
+     // Load the icon image
+    sf::Image icon;
+    if (!icon.loadFromFile("Assets/Texture/windowIcon.png")) {
+        // Handle error if loading fails
+        // For now, let's just print an error message
+        std::cout << "TITLESCREEN::initWindow()::'Failed to load icon image!'" << std::endl;
+    }
+    else
+    this->GameWindow->getWindow().setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
+   
 }
 
 
@@ -101,4 +121,9 @@ void TitleScreen::initMenu()
 bool TitleScreen::isInside(const sf::Vector2f& point, const sf::RectangleShape& rectangle) {
     sf::FloatRect rect = rectangle.getGlobalBounds();
     return rect.contains(point);
+}
+
+void TitleScreen::initGame()
+{
+    this->game = new Game(this->window);
 }
