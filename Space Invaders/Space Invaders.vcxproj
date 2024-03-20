@@ -139,6 +139,7 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Space Invaders.cpp" />
     <ClCompile Include="TitleScreen.cpp" />
+    <ClCompile Include="Weapon.cpp" />
     <ClCompile Include="Window.cpp" />
     <ClCompile Include="Window.hpp" />
   </ItemGroup>
@@ -147,6 +148,7 @@
     <ClInclude Include="Game.hpp" />
     <ClInclude Include="Player.hpp" />
     <ClInclude Include="TitleScreen.hpp" />
+    <ClInclude Include="Weapon.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

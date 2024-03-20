@@ -45,6 +45,9 @@
     <ClCompile Include="Enemy.cpp">
       <Filter>Pliki źródłowe\GameObjects</Filter>
     </ClCompile>
+    <ClCompile Include="Weapon.cpp">
+      <Filter>Pliki źródłowe\GameObjects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DrawableObject.hpp">
@@ -57,6 +60,9 @@
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
     <ClInclude Include="Player.hpp">
+      <Filter>Pliki nagłówkowe\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="Weapon.hpp">
       <Filter>Pliki nagłówkowe\GameObjects</Filter>
     </ClInclude>
   </ItemGroup>

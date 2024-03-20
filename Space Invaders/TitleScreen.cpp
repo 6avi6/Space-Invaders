@@ -46,17 +46,17 @@ void TitleScreen::handleInput() {
     sf::Event event;
     while (this->window->pollEvent(event)) {
         //if ESC or window cross is clicked it closed window
-        if ( event.type == sf::Event::Closed) {
+        if ( event.type == sf::Event::Closed || event.key.code == sf::Keyboard::Escape) {
             this->window->close();
         }
-
+        
         // Check for mouse click
         if (event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left) {
            
             // Check if the mouse click is inside the play button
             sf::Vector2f mousePosition = sf::Vector2f(event.mouseButton.x, event.mouseButton.y);
             if (this->isInside(mousePosition, this->playButton)) {
-                std::cout << "Play Button clicked" << std::endl;
+                
                 this->initGame();
                 game->run();
 

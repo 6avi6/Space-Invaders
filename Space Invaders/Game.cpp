@@ -21,7 +21,7 @@ void Game::run() {
 void Game::processEvents() {
     sf::Event event;
     while (this->window->pollEvent(event)) {
-        if (event.type == sf::Event::Closed ) {
+        if (event.type == sf::Event::Closed) {
             this->isRunning = false;
             this->window->close();
         }
@@ -29,12 +29,20 @@ void Game::processEvents() {
             this->isRunning = false;
 
     }
+
+
+    if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) 
+       this->player->playerWeapon->addNewBullet(this->player->getPlayerSprite().getPosition().x+(this->player->getPlayerSprite().getLocalBounds().getSize().x/2)-2, this->player->getPlayerSprite().getPosition().y);
+
+
+
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
         this->player->movePlayer(1);
-    
+
+
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
         this->player->movePlayer(-1);
-    
+
 }
 
 void Game::update() {
@@ -49,6 +57,12 @@ void Game::render() {
     for (const auto& enemy : enemies) {
         enemy->draw(window);
     }
+
+
+    this->checkAndHandleEnemyCollison();
+    if (this->enemies.empty())
+        this->isRunning = false;
+
 
     //Drawing player
     player->draw(window);
@@ -84,3 +98,18 @@ void Game::setEnemies() {
 
 }
 
+
+void Game::checkAndHandleEnemyCollison() {
+
+    for (auto it = this->enemies.begin(); it != this->enemies.end();) {
+
+        if (this->player->playerWeapon->detectCollison((*it)->getShape()))
+        {
+            it=this->enemies.erase(it);
+        }
+        else
+        ++it;
+        }
+
+
+}

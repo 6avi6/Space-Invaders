@@ -26,6 +26,8 @@ private:
     std::string enemyTexturePath;
     void spawnEnemy(float xPos, float yPos, const std::string& texturePath); // Function to spawn enemies
     void setEnemies();
+
+    void checkAndHandleEnemyCollison();
 };
 
 #endif //GAME_HPP

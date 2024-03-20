@@ -23,3 +23,8 @@ sf::Vector2f Enemy::getPosition() const {
 void Enemy::draw(sf::RenderWindow* window) {
     window->draw(enemySprite);
 }
+
+const sf::Sprite Enemy::getShape()
+{
+    return this->enemySprite;
+}

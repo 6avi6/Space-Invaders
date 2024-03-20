@@ -12,7 +12,7 @@ public:
     sf::Vector2f getPosition() const;
 
     void draw(sf::RenderWindow* window);
-
+    const sf::Sprite getShape();
 private:
     sf::Texture enemyTexture;
     sf::Sprite enemySprite;
