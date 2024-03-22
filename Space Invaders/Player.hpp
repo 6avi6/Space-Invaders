@@ -14,12 +14,17 @@ public:
     Weapon* playerWeapon;
 
     const sf::Sprite getPlayerSprite();
+    const int getPlayerHealth();
+    void playerHitted();
 private:
-    
+    int playerHealth;
     void initWeapon();
-
+    void drawHealthBar(sf::RenderWindow* window);
     sf::Sprite playerSprite;
     sf::Texture playerTexture;
+
+    sf::Sprite healthBar;
+    sf::Texture healthBarTexture;
     
 };
 

@@ -3,6 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 #include "iostream"
+#include "Weapon.hpp"
 
 class Enemy {
 public:
@@ -13,9 +14,13 @@ public:
 
     void draw(sf::RenderWindow* window);
     const sf::Sprite getShape();
+
+    Weapon* enemyWeapon;
 private:
     sf::Texture enemyTexture;
     sf::Sprite enemySprite;
+
+   
 };
 
 #endif // ENEMY_HPP

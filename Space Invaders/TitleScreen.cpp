@@ -4,6 +4,7 @@ TitleScreen::TitleScreen() {
     this->initWindow();
     this->initTitleScreen("Assets/Texture/titleScreen.png");
     this->initMenu();
+    this->createPlayButtonText();
 }
 
 TitleScreen::~TitleScreen() {}
@@ -33,7 +34,7 @@ void TitleScreen::openGame()
         this->window->draw(titleSprite);
 
         this->window->draw(this->playButton);
-
+        this->window->draw(this->playButtonText);
         // Display everything
         this->GameWindow->display();
 
@@ -112,10 +113,27 @@ void TitleScreen::initMenu()
     // Configure play button
     this->playButton.setSize(sf::Vector2f(200.f, 50.f));
     //setting center of button
-    this->playButton.setOrigin(this->playButton.getSize().x/2, this->playButton.getSize().y / 2);
+    this->playButton.setOrigin(this->playButton.getLocalBounds().getSize().x/2, this->playButton.getLocalBounds().getSize().y / 2);
    //setting position of button
     this->playButton.setPosition((this->window->getSize().x / 2), (this->window->getSize().y / 2) +80);
     this->playButton.setFillColor(sf::Color(17, 92, 19));
+    this->playButtonText.setPosition((this->window->getSize().x / 2), (this->window->getSize().y / 2) + 68);
+}
+
+void TitleScreen::createPlayButtonText()
+{
+   
+    if (!font.loadFromFile("Assets/Fonts/slkscre.ttf")) { // Replace "arialbd.ttf" with the path to your bold font file
+        // Error handling: Failed to load font
+        std::cout<<"ERROR::TITLESCREEN::CREATEPLAYBUTTONTEXT()::'font SYNNova loading failure'";
+    }
+
+    // Use the bold font in your text
+    this->playButtonText.setFont(font);
+    this->playButtonText.setString("Play");
+    this->playButtonText.setFillColor(sf::Color::White);
+    this->playButtonText.setCharacterSize(30);
+    this->playButtonText.setOrigin(playButtonText.getLocalBounds().getSize().x/2,this->playButtonText.getLocalBounds().getSize().y/2);
 }
 
 bool TitleScreen::isInside(const sf::Vector2f& point, const sf::RectangleShape& rectangle) {

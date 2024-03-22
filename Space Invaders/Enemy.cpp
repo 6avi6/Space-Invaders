@@ -10,6 +10,8 @@ Enemy::Enemy(float xPos, float yPos, const std::string& texturePath) {
     enemySprite.setTexture(enemyTexture);
 
     enemySprite.setPosition(xPos, yPos);
+
+    this->enemyWeapon = new Weapon("Assets/Texture/bulletTexture.png", 1, 60);
 }
 
 void Enemy::setPosition(float xPos, float yPos) {
@@ -22,6 +24,7 @@ sf::Vector2f Enemy::getPosition() const {
 
 void Enemy::draw(sf::RenderWindow* window) {
     window->draw(enemySprite);
+    this->enemyWeapon->draw(window);
 }
 
 const sf::Sprite Enemy::getShape()

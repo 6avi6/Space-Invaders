@@ -19,6 +19,9 @@
     <Filter Include="Pliki źródłowe\GameObjects">
       <UniqueIdentifier>{7771b4f3-2784-4717-9d9e-6a986a67a96b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Pliki nagłówkowe\Resources">
+      <UniqueIdentifier>{0c49bf18-7cf1-443b-a585-185eefb819ec}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Space Invaders.cpp">
@@ -48,6 +51,9 @@
     <ClCompile Include="Weapon.cpp">
       <Filter>Pliki źródłowe\GameObjects</Filter>
     </ClCompile>
+    <ClCompile Include="RockWall.cpp">
+      <Filter>Pliki źródłowe\GameObjects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DrawableObject.hpp">
@@ -63,6 +69,12 @@
       <Filter>Pliki nagłówkowe\GameObjects</Filter>
     </ClInclude>
     <ClInclude Include="Weapon.hpp">
+      <Filter>Pliki nagłówkowe\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourcesManger.hpp">
+      <Filter>Pliki nagłówkowe\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="RockWall.hpp">
       <Filter>Pliki nagłówkowe\GameObjects</Filter>
     </ClInclude>
   </ItemGroup>

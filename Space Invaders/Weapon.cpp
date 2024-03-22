@@ -31,7 +31,7 @@ void Weapon::draw(sf::RenderWindow* window) {
 
     for (auto it = bullets.begin(); it != bullets.end();) {
         // Move the sprite
-        (*it)->setPosition((*it)->getPosition().x, (*it)->getPosition().y + directionofBulletUp * 8.f);
+        (*it)->setPosition((*it)->getPosition().x, (*it)->getPosition().y + (this->directionofBulletUp * 4.f));
 
         // Draw the sprite
         window->draw(*(*it));

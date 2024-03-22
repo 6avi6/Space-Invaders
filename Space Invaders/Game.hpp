@@ -4,6 +4,8 @@
 #include "Window.hpp"
 #include "Player.hpp"
 #include"Enemy.hpp"
+#include "RockWall.hpp"
+#include <random>
 class Game {
 public:
     Game(sf::RenderWindow *window);
@@ -14,7 +16,7 @@ public:
 private:
     sf::RenderWindow *window;
     bool isRunning;
-
+    int clock; //count to 60 and reset to 0
     void processEvents();
     void update();
     void render();
@@ -26,8 +28,20 @@ private:
     std::string enemyTexturePath;
     void spawnEnemy(float xPos, float yPos, const std::string& texturePath); // Function to spawn enemies
     void setEnemies();
-
+    int enemyReload;
+    void randomEnemyShoot();
     void checkAndHandleEnemyCollison();
+    void checkIfPlayerIsHit();
+
+    int score;
+    sf::Font fontslkscre;
+    sf::Text scoreOfPlayer;
+    void initFonts();
+
+    std::vector<std::shared_ptr<RockWall>> rockWalls;
+    void initRockWalls();
+    void drawRockWalls();
+    void checkIfEnemyHittedRockWall();
 };
 
 #endif //GAME_HPP

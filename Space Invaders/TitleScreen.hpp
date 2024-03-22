@@ -34,6 +34,9 @@ private:
     // Play button
     void initMenu();
     sf::RectangleShape playButton;
+    sf::Font font;
+    sf::Text playButtonText;
+    void createPlayButtonText();
     bool isInside(const sf::Vector2f& point, const sf::RectangleShape& rectangle);
       
     Game* game;
