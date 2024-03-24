@@ -10,7 +10,9 @@ playerHealth(5)
     }
 
     this->playerSprite.setTexture(this->playerTexture);
-    this->playerSprite.setPosition(xPos, yPos);
+    
+    this->playerSprite.setPosition(xPos- (this->playerTexture.getSize().x/2), yPos);
+    
     this->initWeapon();
 
     if (!this->healthBarTexture.loadFromFile("Assets/Texture/heartTexture.png")) {

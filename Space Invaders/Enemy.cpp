@@ -7,9 +7,11 @@ Enemy::Enemy(float xPos, float yPos, const std::string& texturePath) {
         std::cout << "ENEMY::ENEMY(float xPos, float yPos, const std::string& texturePath)::'Failed to load enemy texture!'" << std::endl;
     }
 
-    enemySprite.setTexture(enemyTexture);
+    this->enemySprite.setTexture(enemyTexture);
 
-    enemySprite.setPosition(xPos, yPos);
+    this->enemySprite.setPosition(xPos, yPos);
+    this->enemySprite.scale(1.5, 1.5);
+    this->enemySprite.setOrigin(0,0);
 
     this->enemyWeapon = new Weapon("Assets/Texture/bulletTexture.png", 1, 60);
 }

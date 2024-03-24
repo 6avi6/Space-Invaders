@@ -1,8 +1,105 @@
 ﻿  Game.cpp
-C:\Users\Dawid\Desktop\Studia\4 Semestr INF\PK4\Projekt\Space Invaders\Space Invaders\Game.cpp(107,24): warning C4244: "inicjowanie": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\Dawid\Desktop\Studia\4 Semestr INF\PK4\Projekt\Space Invaders\Space Invaders\Game.cpp(107,144): warning C4244: "+=": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\Dawid\Desktop\Studia\4 Semestr INF\PK4\Projekt\Space Invaders\Space Invaders\Game.cpp(108,25): warning C4244: "inicjowanie": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\Dawid\Desktop\Studia\4 Semestr INF\PK4\Projekt\Space Invaders\Space Invaders\Game.cpp(108,139): warning C4244: "+=": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\Dawid\Desktop\Studia\4 Semestr INF\PK4\Projekt\Space Invaders\Space Invaders\Game.cpp(60,62): warning C4244: "argument": konwersja z "T" do "T", możliwa utrata danych
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\Dawid\Desktop\Studia\4 Semestr INF\PK4\Projekt\Space Invaders\Space Invaders\Game.cpp(61,84): warning C4244: "argument": konwersja z "T" do "T", możliwa utrata danych
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\Dawid\Desktop\Studia\4 Semestr INF\PK4\Projekt\Space Invaders\Space Invaders\Game.cpp(61,62): warning C4244: "argument": konwersja z "T" do "T", możliwa utrata danych
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\Dawid\Desktop\Studia\4 Semestr INF\PK4\Projekt\Space Invaders\Space Invaders\Game.cpp(66,68): warning C4244: "argument": konwersja z "double" do "T", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+C:\Users\Dawid\Desktop\Studia\4 Semestr INF\PK4\Projekt\Space Invaders\Space Invaders\Game.cpp(67,92): warning C4244: "argument": konwersja z "T" do "T", możliwa utrata danych
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\Dawid\Desktop\Studia\4 Semestr INF\PK4\Projekt\Space Invaders\Space Invaders\Game.cpp(67,68): warning C4244: "argument": konwersja z "double" do "T", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+C:\Users\Dawid\Desktop\Studia\4 Semestr INF\PK4\Projekt\Space Invaders\Space Invaders\Game.cpp(72,68): warning C4244: "argument": konwersja z "double" do "T", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+C:\Users\Dawid\Desktop\Studia\4 Semestr INF\PK4\Projekt\Space Invaders\Space Invaders\Game.cpp(73,92): warning C4244: "argument": konwersja z "T" do "T", możliwa utrata danych
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\Dawid\Desktop\Studia\4 Semestr INF\PK4\Projekt\Space Invaders\Space Invaders\Game.cpp(73,68): warning C4244: "argument": konwersja z "double" do "T", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+C:\Users\Dawid\Desktop\Studia\4 Semestr INF\PK4\Projekt\Space Invaders\Space Invaders\Game.cpp(79,65): warning C4244: "argument": konwersja z "T" do "T", możliwa utrata danych
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\Dawid\Desktop\Studia\4 Semestr INF\PK4\Projekt\Space Invaders\Space Invaders\Game.cpp(80,83): warning C4244: "argument": konwersja z "T" do "T", możliwa utrata danych
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\Dawid\Desktop\Studia\4 Semestr INF\PK4\Projekt\Space Invaders\Space Invaders\Game.cpp(80,59): warning C4244: "argument": konwersja z "T" do "T", możliwa utrata danych
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\Dawid\Desktop\Studia\4 Semestr INF\PK4\Projekt\Space Invaders\Space Invaders\Game.cpp(147,28): warning C4244: "inicjowanie": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\Dawid\Desktop\Studia\4 Semestr INF\PK4\Projekt\Space Invaders\Space Invaders\Game.cpp(148,36): warning C4244: "inicjowanie": konwersja z "double" do "int", możliwa utrata danych
+C:\Users\Dawid\Desktop\Studia\4 Semestr INF\PK4\Projekt\Space Invaders\Space Invaders\Game.cpp(149,37): warning C4244: "inicjowanie": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\Dawid\Desktop\Studia\4 Semestr INF\PK4\Projekt\Space Invaders\Space Invaders\Game.cpp(151,28): warning C4244: "inicjowanie": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\Dawid\Desktop\Studia\4 Semestr INF\PK4\Projekt\Space Invaders\Space Invaders\Game.cpp(152,33): warning C4244: "inicjowanie": konwersja z "double" do "int", możliwa utrata danych
+C:\Users\Dawid\Desktop\Studia\4 Semestr INF\PK4\Projekt\Space Invaders\Space Invaders\Game.cpp(153,34): warning C4244: "inicjowanie": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\Dawid\Desktop\Studia\4 Semestr INF\PK4\Projekt\Space Invaders\Space Invaders\Game.cpp(158,168): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\Dawid\Desktop\Studia\4 Semestr INF\PK4\Projekt\Space Invaders\Space Invaders\Game.cpp(158,75): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\Dawid\Desktop\Studia\4 Semestr INF\PK4\Projekt\Space Invaders\Space Invaders\Game.cpp(246,27): warning C4244: "inicjowanie": konwersja z "double" do "float", możliwa utrata danych
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\xutility(217,72): warning C4244: "argument": konwersja z "_Ty" do "int", możliwa utrata danych
           with
           [
@@ -28,7 +125,7 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.3193
           [
               _Ty=unsigned int
           ]
-C:\Users\Dawid\Desktop\Studia\4 Semestr INF\PK4\Projekt\Space Invaders\Space Invaders\Game.cpp(89,111): message : zobacz odwołanie do kompilowanego tworzenia wystąpienia „std::shared_ptr<Player> std::make_shared<Player,T,double,std::string&>(T &&,double &&,std::string &)” funkcji szablon
+C:\Users\Dawid\Desktop\Studia\4 Semestr INF\PK4\Projekt\Space Invaders\Space Invaders\Game.cpp(128,111): message : zobacz odwołanie do kompilowanego tworzenia wystąpienia „std::shared_ptr<Player> std::make_shared<Player,T,double,std::string&>(T &&,double &&,std::string &)” funkcji szablon
           with
           [
               T=unsigned int
@@ -37,16 +134,6 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.3193
           with
           [
               _Ty=double
-          ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\xutility(217,72): warning C4244: "argument": konwersja z "_Ty" do "int", możliwa utrata danych
-          with
-          [
-              _Ty=float
-          ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\xutility(231,77): warning C4244: "argument": konwersja z "_Ty" do "int", możliwa utrata danych
-          with
-          [
-              _Ty=float
           ]
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\xutility(218,85): warning C4244: "argument": konwersja z "_Ty" do "int", możliwa utrata danych
           with
@@ -62,10 +149,5 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.3193
           with
           [
               _Ty=Player
-          ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\xutility(218,85): warning C4244: "argument": konwersja z "_Ty" do "int", możliwa utrata danych
-          with
-          [
-              _Ty=float
           ]
   Space Invaders.vcxproj -> C:\Users\Dawid\Desktop\Studia\4 Semestr INF\PK4\Projekt\Space Invaders\Space Invaders\Debug\Space Invaders.exe

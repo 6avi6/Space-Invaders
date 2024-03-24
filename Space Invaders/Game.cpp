@@ -54,7 +54,43 @@ void Game::update() {
     // Update game logic here
 }
 
+void supportLine(sf::RenderWindow *window){
+    // Create a line for the y-axis
+    sf::VertexArray yAxisLine(sf::Lines, 2);
+    yAxisLine[0].position = sf::Vector2f(window->getSize().x / 2, 0);    // Start of line
+    yAxisLine[1].position = sf::Vector2f(window->getSize().x / 2, window->getSize().y); // End of line
+    yAxisLine[0].color = sf::Color::Red;
+    yAxisLine[1].color = sf::Color::Red;
+
+    sf::VertexArray border1AxisLine(sf::Lines, 2);
+    border1AxisLine[0].position = sf::Vector2f(window->getSize().x * 0.1, 0);    // Start of line
+    border1AxisLine[1].position = sf::Vector2f(window->getSize().x * 0.1, window->getSize().y); // End of line
+    border1AxisLine[0].color = sf::Color::White;
+    border1AxisLine[1].color = sf::Color::White;
+
+    sf::VertexArray border2AxisLine(sf::Lines, 2);
+    border2AxisLine[0].position = sf::Vector2f(window->getSize().x * 0.9, 0);    // Start of line
+    border2AxisLine[1].position = sf::Vector2f(window->getSize().x * 0.9, window->getSize().y); // End of line
+    border2AxisLine[0].color = sf::Color::White;
+    border2AxisLine[1].color = sf::Color::White;
+
+    // Create a line for the x-axis
+    sf::VertexArray xAxisLine(sf::Lines, 2);
+    xAxisLine[0].position = sf::Vector2f(0, window->getSize().y / 2);    // Start of line
+    xAxisLine[1].position = sf::Vector2f(window->getSize().x, window->getSize().y / 2); // End of line
+    xAxisLine[0].color = sf::Color::Blue;
+    xAxisLine[1].color = sf::Color::Blue;
+    window->draw(yAxisLine);
+    window->draw(xAxisLine);
+    window->draw(border2AxisLine);
+    window->draw(border1AxisLine);
+}
+
 void Game::render() {
+    
+
+   
+
     window->clear();
     // Drawn game
 
@@ -81,6 +117,9 @@ void Game::render() {
 
     this->window->draw(this->scoreOfPlayer);
     this->drawRockWalls();
+
+    supportLine(this->window);
+
     window->display();
 }
 
@@ -103,13 +142,27 @@ void Game::setEnemies() {
         // For now, let's just print an error message
         std::cout << "ENEMY::ENEMY(float xPos, float yPos, const std::string& texturePath)::'Failed to load enemy texture!'" << std::endl;
     }
-    //baisics sp
-    for (float columns = (float(this->window->getSize().x) * 0.1); columns < (this->window->getSize().x * 0.8); columns += Texture.getSize().x * 1.4) {
-        for (float rows = (float(this->window->getSize().y) * 0.2); rows < (this->window->getSize().y * 0.5); rows += Texture.getSize().y * 1.4)
-            this->spawnEnemy(columns, rows, enemyTexturePath);
+    else {
+        //setting postion of enemies
+        float XsizeOfEnemy = Texture.getSize().x * 1.5;
+        int NumberOfEnemeisColumns = (this->window->getSize().x * 0.8) / XsizeOfEnemy;
+        float spacingBetweenColumns = ((this->window->getSize().x * 0.8) - (NumberOfEnemeisColumns * XsizeOfEnemy)) / NumberOfEnemeisColumns;
+
+        float YsizeOfEnemy = Texture.getSize().y * 1.5;
+        int NumberOfEnemeisRows = (this->window->getSize().y * 0.4) / XsizeOfEnemy;
+        float spacingBetweenRows = ((this->window->getSize().y * 0.4) - (NumberOfEnemeisRows * YsizeOfEnemy)) / NumberOfEnemeisRows;
+
+
+        for (int column = 0; column < NumberOfEnemeisColumns; column++) {
+            for (int row = 0; row < NumberOfEnemeisRows; row++) {
+                this->spawnEnemy((float(this->window->getSize().x) * 0.1) + column * (XsizeOfEnemy + spacingBetweenColumns), row * (YsizeOfEnemy + spacingBetweenRows) + (float(this->window->getSize().y) * 0.2), enemyTexturePath);
+            }
+
+        }
 
     }
 
+   
 }
 
 void Game::randomEnemyShoot()
@@ -181,12 +234,21 @@ void Game::initFonts()
 
 void Game::initRockWalls()
 {
-    float spacing = (this->window->getSize().x - 200.f) / 5;
-    for (int i = 0; i < 5; i++) {
-        std::shared_ptr<RockWall> newRock = std::make_shared<RockWall>(100.f+i*spacing, this->window->getSize().y * 0.75);
-        this->rockWalls.push_back(newRock);
-    }
     
+        sf::Texture Texture;
+        if (!Texture.loadFromFile("Assets/Texture/PlayerWall/wall5Texture.png")) {
+        // Handle error if loading fails
+        // For now, let's just print an error message
+        std::cout << "GAME::INITROCKWALLS()::'Failed to load wall texture!'" << std::endl;
+    }
+        else {
+            int number_of_rocks = 5;
+            float spacing = ((this->window->getSize().x * 0.8) - (Texture.getSize().x * 1.5 * number_of_rocks)) / number_of_rocks;
+            for (int i = 0; i < number_of_rocks; i++) {
+                std::shared_ptr<RockWall> newRock = std::make_shared<RockWall>((this->window->getSize().x * 0.1) + i * (spacing + (Texture.getSize().x * 2)), this->window->getSize().y * 0.7);
+                this->rockWalls.push_back(newRock);
+            }
+        }
 }
 
 void Game::drawRockWalls()

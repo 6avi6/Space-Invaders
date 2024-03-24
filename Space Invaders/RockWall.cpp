@@ -39,7 +39,6 @@ void RockWall::initTexture()
 
     this->rock.setTexture(this->rockTexture);
     
-    this->rock.setOrigin(this->rock.getLocalBounds().getSize().x / 2, this->rock.getLocalBounds().getSize().y / 2);
    
 }
 

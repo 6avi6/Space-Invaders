@@ -116,7 +116,7 @@ void TitleScreen::initMenu()
     this->playButton.setOrigin(this->playButton.getLocalBounds().getSize().x/2, this->playButton.getLocalBounds().getSize().y / 2);
    //setting position of button
     this->playButton.setPosition((this->window->getSize().x / 2), (this->window->getSize().y / 2) +80);
-    this->playButton.setFillColor(sf::Color(17, 92, 19));
+    this->playButton.setFillColor(sf::Color(25, 1, 1, 220));
     this->playButtonText.setPosition((this->window->getSize().x / 2), (this->window->getSize().y / 2) + 68);
 }
 
