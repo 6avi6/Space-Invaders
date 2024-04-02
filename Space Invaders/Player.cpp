@@ -27,13 +27,15 @@ playerHealth(5)
 
 void Player::draw(sf::RenderWindow *window) {
     //collison detection and handling with window frame 
-    while (this->playerSprite.getPosition().x + this->playerSprite.getLocalBounds().getSize().x > window->getSize().x)
+    //right barrier
+    while (this->playerSprite.getPosition().x + this->playerSprite.getLocalBounds().getSize().x > window->getSize().x*0.9)
         this->playerSprite.setPosition(this->playerSprite.getPosition().x - 1, playerSprite.getPosition().y);
-
-    while (this->playerSprite.getPosition().x < 0)
+    //left barrier
+    while (this->playerSprite.getPosition().x < window->getSize().x * 0.1)
         this->playerSprite.setPosition(this->playerSprite.getPosition().x + 1, playerSprite.getPosition().y);
 
     window->draw(this->playerSprite);
+    
     this->playerWeapon->draw(window);
     this->drawHealthBar(window);
 }
@@ -47,7 +49,7 @@ void Player::movePlayer(int direction=0)
 
 void Player::initWeapon()
 {
-    this->playerWeapon = new Weapon("Assets/Texture/bulletTexture.png", -1,15);
+    this->playerWeapon = new Weapon("Assets/Texture/bulletTexture.png", -1,8);
 }
 
 void Player::drawHealthBar(sf::RenderWindow* window)
@@ -65,6 +67,11 @@ void Player::drawHealthBar(sf::RenderWindow* window)
 const sf::Sprite Player::getPlayerSprite()
 {
     return this->playerSprite;
+}
+
+void Player::setPostion(int xPos)
+{
+    this->playerSprite.setPosition(xPos, this->playerSprite.getPosition().y);
 }
 
 const int Player::getPlayerHealth()

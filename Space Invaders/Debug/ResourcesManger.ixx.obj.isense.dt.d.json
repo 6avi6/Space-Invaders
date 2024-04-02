@@ -1,0 +1,19 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\dawid\\desktop\\studia\\4 semestr inf\\pk4\\projekt\\space invaders\\space invaders\\resourcesmanger.ixx",
+        "ProvidedModule": "resourcemanager",
+        "Includes": [],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": [
+            {
+                "Header": "c:\\users\\dawid\\desktop\\studia\\4 semestr inf\\pk4\\projekt\\space invaders\\space invaders\\external\\include\\sfml\\graphics.hpp",
+                "BMI": "C:\\Users\\Dawid\\Desktop\\Studia\\4 Semestr INF\\PK4\\Projekt\\Space Invaders\\Space Invaders\\Debug\\Graphics.hpp_9B6EECCFAA9329E9.ifc.dt"
+            },
+            {
+                "Header": "c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.34.31933\\include\\iostream",
+                "BMI": "C:\\Users\\Dawid\\Desktop\\Studia\\4 Semestr INF\\PK4\\Projekt\\Space Invaders\\Space Invaders\\Debug\\iostream_6B0F20D2B67FF47A.ifc.dt"
+            }
+        ]
+    }
+}

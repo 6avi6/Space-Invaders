@@ -7,7 +7,7 @@
 
 class Enemy {
 public:
-    Enemy(float xPos, float yPos, const std::string& texturePath);
+    Enemy(float xPos, float yPos, const std::string& texturePath,int levelBonus);
 
     void setPosition(float xPos, float yPos);
     sf::Vector2f getPosition() const;

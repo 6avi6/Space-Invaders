@@ -1,7 +1,7 @@
 #include "Weapon.hpp"
 
-Weapon::Weapon(const std::string& texturePath, int directionofBulletUp,int reloadTime=0):
-    directionofBulletUp(directionofBulletUp),reloadTime(reloadTime),weaponCounter{0}
+Weapon::Weapon(const std::string& texturePath, int directionofBulletUp,int bulletSpeed):
+    directionofBulletUp(directionofBulletUp), bulletSpeed(bulletSpeed)
 {
     if (!bulletsTexture.loadFromFile(texturePath)) {
         // Handle error if loading fails
@@ -14,24 +14,28 @@ Weapon::Weapon(const std::string& texturePath, int directionofBulletUp,int reloa
     
 }
 
+void Weapon::clearMagazine()
+{
+    this->bullets.clear();
+}
+
 
 
 void Weapon::addNewBullet(float xPostion, float yPostion)
 {
-    if (this->reloadTime <= this->weaponCounter) {
-        weaponCounter = 0;
+    
         std::shared_ptr<sf::Sprite> bullet = std::make_shared<sf::Sprite>(bulletsTexture);
         bullet->setPosition(xPostion, yPostion);
         this->bullets.push_back(bullet);
-    }
+    
 }
 
 void Weapon::draw(sf::RenderWindow* window) {
-    this->weaponCounter++;
+    
 
     for (auto it = bullets.begin(); it != bullets.end();) {
         // Move the sprite
-        (*it)->setPosition((*it)->getPosition().x, (*it)->getPosition().y + (this->directionofBulletUp * 4.f));
+        (*it)->setPosition((*it)->getPosition().x, (*it)->getPosition().y + (this->directionofBulletUp * this->bulletSpeed));
 
         // Draw the sprite
         window->draw(*(*it));

@@ -14,6 +14,7 @@ public:
     Weapon* playerWeapon;
 
     const sf::Sprite getPlayerSprite();
+    void setPostion(int xPos);
     const int getPlayerHealth();
     void playerHitted();
 private:

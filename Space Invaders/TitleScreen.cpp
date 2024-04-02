@@ -1,10 +1,11 @@
 #include "TitleScreen.hpp"
 
-TitleScreen::TitleScreen() {
+TitleScreen::TitleScreen():
+resources(ResourceManager::getInstance())
+{
     this->initWindow();
     this->initTitleScreen("Assets/Texture/titleScreen.png");
     this->initMenu();
-    this->createPlayButtonText();
 }
 
 TitleScreen::~TitleScreen() {}
@@ -14,12 +15,19 @@ void TitleScreen::display() {
     this->window->clear();
 
     // Draw the title screen sprite
-    this->window->draw(this->titleSprite);
+   this->window->draw(this->titleSprite);
     //Drawing menu
     this->window->draw(this->playButton);
+    this->window->draw(this->playButtonText);
+    
+    this->window->draw(this->scoresButton);
+    this->window->draw(this->scoresButtonText);
 
-    // Display everything
-    this->window->display();
+    this->window->draw(this->quitButton);
+    this->window->draw(this->quitButtonText);
+
+
+   
 }
 
 void TitleScreen::openGame()
@@ -31,10 +39,10 @@ void TitleScreen::openGame()
         this->GameWindow->clear();
         
         
-        this->window->draw(titleSprite);
+        
 
-        this->window->draw(this->playButton);
-        this->window->draw(this->playButtonText);
+        this->display();
+       
         // Display everything
         this->GameWindow->display();
 
@@ -47,7 +55,7 @@ void TitleScreen::handleInput() {
     sf::Event event;
     while (this->window->pollEvent(event)) {
         //if ESC or window cross is clicked it closed window
-        if ( event.type == sf::Event::Closed || event.key.code == sf::Keyboard::Escape) {
+        if ( event.type == sf::Event::Closed /* || event.key.code == sf::Keyboard::Escape */ ) {
             this->window->close();
         }
         
@@ -61,7 +69,22 @@ void TitleScreen::handleInput() {
                 this->initGame();
                 game->run();
 
+                if (game->getScore() > this->resources.getLastScore()) {
+                    TextInput writeNewScoreWindow(this->window, &font);
+                    writeNewScoreWindow.run();
+                    if(writeNewScoreWindow.getText()!="")
+                    this->resources.addNewScore(game->getScore(), writeNewScoreWindow.getText());
+                    
+                }
+
                 delete game;
+            }
+            if (isInside(mousePosition, this->quitButton)) {
+                this->window->close();
+            }
+            if (isInside(mousePosition, this->scoresButton)) {
+                TableScore tableScore(this->window,this->resources.getTopScores(),&font);
+                tableScore.open();
             }
         }
     }
@@ -73,15 +96,17 @@ void TitleScreen::initTitleScreen(std::string wallpaperPath)
     if (!titleTexture.loadFromFile(wallpaperPath)) {
         // Handle error if texture loading fails
         // For now, let's just print an error message
-        std::cout << "TITLESCREEN::initTitleScreen(std::string wallpaperPath)::'Failed to load title screen texture!' "<< wallpaperPath << std::endl;
+        std::cout << "TITLESCREEN::initTitleScreen(std::string wallpaperPath)::'Failed to load title screen texture!' " << wallpaperPath << std::endl;
     }
-    
-    
-    // Set title screen sprite texture
-    this->titleSprite.setTexture(this->titleTexture);
+    else {
 
-    //Setting wallpaper on full screen
-    this->titleSprite.scale(this->window->getSize().x/ this->titleTexture.getSize().x, this->window->getSize().y / this->titleTexture.getSize().y);
+        // Set title screen sprite texture
+        this->titleSprite.setTexture(this->titleTexture);
+
+        //Setting wallpaper on full screen
+        this->titleSprite.scale(this->window->getSize().x / this->titleTexture.getSize().x, this->window->getSize().y / this->titleTexture.getSize().y);
+        this->titleSprite.setPosition(0,-120);
+    }
 }
 
 void TitleScreen::initWindow()
@@ -110,30 +135,61 @@ void TitleScreen::initWindow()
 
 void TitleScreen::initMenu()
 {
-    // Configure play button
-    this->playButton.setSize(sf::Vector2f(200.f, 50.f));
-    //setting center of button
-    this->playButton.setOrigin(this->playButton.getLocalBounds().getSize().x/2, this->playButton.getLocalBounds().getSize().y / 2);
-   //setting position of button
-    this->playButton.setPosition((this->window->getSize().x / 2), (this->window->getSize().y / 2) +80);
-    this->playButton.setFillColor(sf::Color(25, 1, 1, 220));
-    this->playButtonText.setPosition((this->window->getSize().x / 2), (this->window->getSize().y / 2) + 68);
+    this->initButtons();
+
 }
 
-void TitleScreen::createPlayButtonText()
+void TitleScreen::initButtons()
 {
-   
-    if (!font.loadFromFile("Assets/Fonts/slkscre.ttf")) { // Replace "arialbd.ttf" with the path to your bold font file
+    if (!this->font.loadFromFile("Assets/Fonts/slkscre.ttf")) { // Replace "arialbd.ttf" with the path to your bold font file
         // Error handling: Failed to load font
-        std::cout<<"ERROR::TITLESCREEN::CREATEPLAYBUTTONTEXT()::'font SYNNova loading failure'";
+        std::cout << "ERROR::TITLESCREEN::CREATEPLAYBUTTONTEXT()::'font SYNNova loading failure'"<<std::endl;
     }
+    // Configure play button
+    this->playButton.setSize(sf::Vector2f(400.f , 100.f ));
+    //setting center of button
+    this->playButton.setOrigin(this->playButton.getLocalBounds().getSize().x / 2, this->playButton.getLocalBounds().getSize().y / 2);
+    //setting position of button
+    this->playButton.setPosition((this->window->getSize().x / 2), (this->window->getSize().y / 2)  );
+    this->playButton.setFillColor(sf::Color(25, 1, 1, 220));
+    this->playButtonText.setPosition((this->window->getSize().x / 2), (this->window->getSize().y / 2) - 12);
 
-    // Use the bold font in your text
-    this->playButtonText.setFont(font);
+    this->playButtonText.setFont(this->font);
     this->playButtonText.setString("Play");
     this->playButtonText.setFillColor(sf::Color::White);
     this->playButtonText.setCharacterSize(30);
-    this->playButtonText.setOrigin(playButtonText.getLocalBounds().getSize().x/2,this->playButtonText.getLocalBounds().getSize().y/2);
+    this->playButtonText.setOrigin(playButtonText.getLocalBounds().getSize().x / 2, this->playButtonText.getLocalBounds().getSize().y / 2);
+
+    //init scores
+    this->scoresButton.setSize(sf::Vector2f(190,50 )); // Adjust the size as needed
+    this->scoresButton.setFillColor(sf::Color::Green); // Adjust color as needed
+    this->scoresButton.setOrigin(this->scoresButton.getLocalBounds().getSize().x, 0);
+    this->scoresButton.setPosition(this->window->getSize().x/2 +(this->playButton.getLocalBounds().getSize().x/2),( this->window->getSize().y*0.5) + this->playButton.getLocalBounds().getSize().y * 0.6);
+ 
+    this->scoresButtonText.setFont(this->font);
+    this->scoresButtonText.setString("Scores");
+    this->scoresButtonText.setCharacterSize(24);
+    this->scoresButtonText.setFillColor(sf::Color::White);
+    this->scoresButtonText.setOrigin(scoresButtonText.getLocalBounds().getSize().x / 2, this->scoresButtonText.getLocalBounds().getSize().y / 2);
+    
+    this->scoresButtonText.setPosition(this->scoresButton.getPosition().x- this->scoresButton.getLocalBounds().getSize().x / 2, this->scoresButton.getPosition().y+10+this->scoresButtonText.getLocalBounds().getSize().y / 2);
+
+
+   
+
+    // Initialize quit button
+    this->quitButton.setSize(sf::Vector2f(190, 50)); // Adjust the size as needed
+    this->quitButton.setFillColor(sf::Color::Red); // Adjust color as needed
+    this->quitButton.setOrigin(0, 0);
+    this->quitButton.setPosition(this->window->getSize().x / 2 - (this->playButton.getLocalBounds().getSize().x / 2), (this->window->getSize().y * 0.5) + this->playButton.getLocalBounds().getSize().y * 0.6);
+
+    this->quitButtonText.setFont(this->font);
+    this->quitButtonText.setString("Quit");
+    this->quitButtonText.setCharacterSize(24);
+    this->quitButtonText.setFillColor(sf::Color::White);
+    this->quitButtonText.setOrigin(this->quitButtonText.getLocalBounds().getSize().x / 2, this->quitButtonText.getLocalBounds().getSize().y / 2);
+    this->quitButtonText.setPosition(this->quitButton.getPosition().x + (this->quitButton.getLocalBounds().getSize().x / 2), this->quitButton.getPosition().y + 10 + (this->quitButtonText.getLocalBounds().getSize().y / 2));
+
 }
 
 bool TitleScreen::isInside(const sf::Vector2f& point, const sf::RectangleShape& rectangle) {

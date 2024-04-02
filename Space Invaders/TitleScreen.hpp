@@ -1,11 +1,14 @@
 #ifndef TITLE_SCREEN_HPP
 #define TITLE_SCREEN_HPP
+#include <iostream>
 
 #include <SFML/Graphics.hpp>
 #include "Window.hpp"
 
 #include "Game.hpp"
-#include "iostream"
+#include "ResourcesManger.hpp"
+#include "TableScore.h"
+#include "TextInput.hpp"
 class TitleScreen {
 public:
     TitleScreen();
@@ -17,6 +20,9 @@ public:
 
     
 private:
+    ResourceManager &resources;
+   
+
     // Method to handle user input
     void handleInput();
 
@@ -33,10 +39,17 @@ private:
     
     // Play button
     void initMenu();
+
     sf::RectangleShape playButton;
+    sf::RectangleShape scoresButton;
+    sf::RectangleShape quitButton;
+
     sf::Font font;
     sf::Text playButtonText;
-    void createPlayButtonText();
+    sf::Text scoresButtonText;
+    sf::Text quitButtonText;
+   
+    void initButtons();
     bool isInside(const sf::Vector2f& point, const sf::RectangleShape& rectangle);
       
     Game* game;

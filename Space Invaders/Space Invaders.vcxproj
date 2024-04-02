@@ -143,6 +143,8 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="RockWall.cpp" />
     <ClCompile Include="Space Invaders.cpp" />
+    <ClCompile Include="TableScore.cpp" />
+    <ClCompile Include="TextInput.cpp" />
     <ClCompile Include="TitleScreen.cpp" />
     <ClCompile Include="Weapon.cpp" />
     <ClCompile Include="Window.cpp" />
@@ -154,6 +156,8 @@
     <ClInclude Include="Player.hpp" />
     <ClInclude Include="ResourcesManger.hpp" />
     <ClInclude Include="RockWall.hpp" />
+    <ClInclude Include="TableScore.h" />
+    <ClInclude Include="TextInput.hpp" />
     <ClInclude Include="TitleScreen.hpp" />
     <ClInclude Include="Weapon.hpp" />
   </ItemGroup>

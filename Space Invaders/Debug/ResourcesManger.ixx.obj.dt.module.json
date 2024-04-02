@@ -1,0 +1,12 @@
+{
+    "Version": "1.1",
+    "Data": {
+        "Source": "c:\\users\\dawid\\desktop\\studia\\4 semestr inf\\pk4\\projekt\\space invaders\\space invaders\\resourcesmanger.ixx",
+        "ProvidedModule": "resourcemanager",
+        "ImportedModules": [],
+        "ImportedHeaderUnits": [
+            "C:\\Users\\Dawid\\Desktop\\Studia\\4 Semestr INF\\PK4\\Projekt\\Space Invaders\\Space Invaders\\\\External\\include\\SFML\\Graphics.hpp",
+            "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.34.31933\\include\\iostream"
+        ]
+    }
+}

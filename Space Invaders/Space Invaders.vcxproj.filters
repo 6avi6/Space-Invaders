@@ -54,6 +54,12 @@
     <ClCompile Include="RockWall.cpp">
       <Filter>Pliki źródłowe\GameObjects</Filter>
     </ClCompile>
+    <ClCompile Include="TableScore.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="TextInput.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DrawableObject.hpp">
@@ -75,6 +81,12 @@
       <Filter>Pliki nagłówkowe\Resources</Filter>
     </ClInclude>
     <ClInclude Include="RockWall.hpp">
+      <Filter>Pliki nagłówkowe\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="TableScore.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="TextInput.hpp">
       <Filter>Pliki nagłówkowe\GameObjects</Filter>
     </ClInclude>
   </ItemGroup>

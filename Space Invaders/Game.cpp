@@ -3,12 +3,15 @@
 Game::Game(sf::RenderWindow *window) : window(window), isRunning(true) {
     this->enemyTexturePath = "Assets/Texture/enemyTexture.png";
     this->initPlayer("Assets/Texture/playerTexture.png");
-    this->setEnemies();
+    //this->setEnemies();
     this->clock = 0;
-    this->enemyReload = 60;
-    
+    this->enemyReload = 57;
+    this->playerReload = 10;
+    this->playerFired = false;
+    this->playerCounterReload = 0;
     this->initFonts();
-    this->initRockWalls();
+    
+    this->level = 0;
 }
 
 Game::~Game() {}
@@ -36,10 +39,14 @@ void Game::processEvents() {
     }
 
 
-    if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) 
-       this->player->playerWeapon->addNewBullet(this->player->getPlayerSprite().getPosition().x+(this->player->getPlayerSprite().getLocalBounds().getSize().x/2)-2, this->player->getPlayerSprite().getPosition().y);
+    if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+        if (this->playerFired == false) {
+            this->player->playerWeapon->addNewBullet(this->player->getPlayerSprite().getPosition().x + (this->player->getPlayerSprite().getLocalBounds().getSize().x / 2) - 2, this->player->getPlayerSprite().getPosition().y);
+            this->playerFired = true;
 
+        }
 
+    }
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
         this->player->movePlayer(1);
@@ -94,6 +101,14 @@ void Game::render() {
     window->clear();
     // Drawn game
 
+    if (this->enemies.empty()) {
+        
+        this->intLevel();
+    }
+
+
+
+
     //Drawing enemies
     for (const auto& enemy : enemies) {
         enemy->draw(this->window);
@@ -105,22 +120,56 @@ void Game::render() {
     this->checkIfEnemyHittedRockWall();
     this->randomEnemyShoot();
 
-    if (this->enemies.empty())
-        this->isRunning = false;
-
+   
     if (this->clock < 61)
         this->clock++;
     else
         this->clock = 0;
+
+    if (this->playerFired) {
+        this->playerCounterReload++;
+        
+    }
+
+    if (this->playerCounterReload > this->playerReload) {
+        this->playerFired = false;
+        this->playerCounterReload = 0;
+    }
     //Drawing player
     this->player->draw(this->window);
 
     this->window->draw(this->scoreOfPlayer);
     this->drawRockWalls();
 
-    supportLine(this->window);
+    //supportLine(this->window);
 
     window->display();
+}
+
+void Game::intLevel()
+{
+    this->level++;
+    this->enemyReload -= 2;
+    //std::cout <<"Level: "<< this->level << "Reload: "<<this->enemyReload << std::endl;
+    this->player->playerWeapon->clearMagazine();
+
+    sf::Text levelInfo;
+    levelInfo.setFont(this->fontslkscre);
+    levelInfo.setFillColor(sf::Color::White);
+    levelInfo.setString("Level "+std::to_string(this->level));
+    levelInfo.setCharacterSize(40);
+    levelInfo.setOrigin(levelInfo.getLocalBounds().getSize().x/2, levelInfo.getLocalBounds().getSize().y / 2);
+    levelInfo.setPosition(this->window->getSize().x/2, this->window->getSize().y / 2);
+
+    window->clear();
+    this->window->draw(levelInfo);
+    window->display();
+    std::this_thread::sleep_for(std::chrono::seconds(2));
+    window->clear();
+    this->player->setPostion(this->window->getSize().x/2-(this->player->getPlayerSprite().getLocalBounds().getSize().x/2));
+    
+    this->initRockWalls();
+    this->setEnemies();
 }
 
 void Game::initPlayer(std::string texturePath)
@@ -130,8 +179,8 @@ void Game::initPlayer(std::string texturePath)
 }
 
 void Game::spawnEnemy(float xPos, float yPos, const std::string& texturePath) {
-   
-    std::shared_ptr<Enemy> newEnemy = std::make_shared<Enemy>(xPos, yPos, texturePath);
+    this->enemyNumber++;
+    std::shared_ptr<Enemy> newEnemy = std::make_shared<Enemy>(xPos, yPos, texturePath,this->level);
     enemies.push_back(newEnemy);
 }
 
@@ -168,10 +217,12 @@ void Game::setEnemies() {
 void Game::randomEnemyShoot()
 {
     if (this->enemyReload < this->clock) {
+
         std::random_device rd;
         std::mt19937 gen(rd());
-        std::uniform_int_distribution<int> distribution(0, this->enemies.size() - 1);
+        std::uniform_int_distribution<int> distribution(0, this->enemyNumber);
         int rand = distribution(gen);
+        if (rand < this->enemies.size())
         this->enemies[rand]->enemyWeapon->addNewBullet(this->enemies[rand]->getPosition().x+ (this->enemies[rand]->getShape().getGlobalBounds().getSize().x/2), this->enemies[rand]->getPosition().y);
     }
 }
@@ -216,12 +267,17 @@ void Game::checkIfPlayerIsHit() {
 
 }
 
+const int Game::getScore()
+{
+    return this->score;
+}
+
 void Game::initFonts()
 {
     score = 0;
     if (!fontslkscre.loadFromFile("Assets/Fonts/slkscre.ttf")) { // Replace "arial.ttf" with the path to your font file
         // Error handling: Failed to load font
-        std::cout << "GAME::INITFONTS()::'font SYNNova loading failure'" << std::endl;
+        std::cout << "GAME::INITFONTS()::'font slkscre loading failure'" << std::endl;
     }
 
     // Use the font in your text
@@ -234,7 +290,7 @@ void Game::initFonts()
 
 void Game::initRockWalls()
 {
-    
+    this->rockWalls.clear();
         sf::Texture Texture;
         if (!Texture.loadFromFile("Assets/Texture/PlayerWall/wall5Texture.png")) {
         // Handle error if loading fails
