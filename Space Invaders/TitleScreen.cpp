@@ -70,7 +70,8 @@ void TitleScreen::handleInput() {
                 game->run();
 
                 if (game->getScore() > this->resources.getLastScore()) {
-                    TextInput writeNewScoreWindow(this->window, &font);
+                    TextInput writeNewScoreWindow(this->window, &font, game->getScore());
+                    
                     writeNewScoreWindow.run();
                     if(writeNewScoreWindow.getText()!="")
                     this->resources.addNewScore(game->getScore(), writeNewScoreWindow.getText());

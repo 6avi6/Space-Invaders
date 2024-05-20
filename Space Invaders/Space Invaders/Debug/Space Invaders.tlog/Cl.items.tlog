@@ -1,5 +1,13 @@
-C:\Users\magdi\OneDrive\Pulpit\Space-Invaders\Space Invaders\Game.cpp;C:\Users\magdi\OneDrive\Pulpit\Space-Invaders\Space Invaders\Space Invaders\Debug\Game.obj
-C:\Users\magdi\OneDrive\Pulpit\Space-Invaders\Space Invaders\Space Invaders.cpp;C:\Users\magdi\OneDrive\Pulpit\Space-Invaders\Space Invaders\Space Invaders\Debug\Space Invaders.obj
-C:\Users\magdi\OneDrive\Pulpit\Space-Invaders\Space Invaders\TitleScreen.cpp;C:\Users\magdi\OneDrive\Pulpit\Space-Invaders\Space Invaders\Space Invaders\Debug\TitleScreen.obj
-C:\Users\magdi\OneDrive\Pulpit\Space-Invaders\Space Invaders\Window.cpp;C:\Users\magdi\OneDrive\Pulpit\Space-Invaders\Space Invaders\Space Invaders\Debug\Window.obj
-C:\Users\magdi\OneDrive\Pulpit\Space-Invaders\Space Invaders\Window.hpp;C:\Users\magdi\OneDrive\Pulpit\Space-Invaders\Space Invaders\Space Invaders\Debug\Window.obj
+C:\Users\Dawid\Desktop\deadline\Space-Invaders\Space Invaders\Enemy.cpp;C:\Users\Dawid\Desktop\deadline\Space-Invaders\Space Invaders\Space Invaders\Debug\Enemy.obj
+C:\Users\Dawid\Desktop\deadline\Space-Invaders\Space Invaders\Enemy.hpp;C:\Users\Dawid\Desktop\deadline\Space-Invaders\Space Invaders\Space Invaders\Debug\Enemy.obj
+C:\Users\Dawid\Desktop\deadline\Space-Invaders\Space Invaders\Game.cpp;C:\Users\Dawid\Desktop\deadline\Space-Invaders\Space Invaders\Space Invaders\Debug\Game.obj
+C:\Users\Dawid\Desktop\deadline\Space-Invaders\Space Invaders\MeveableGraphicalObject.cpp;C:\Users\Dawid\Desktop\deadline\Space-Invaders\Space Invaders\Space Invaders\Debug\MeveableGraphicalObject.obj
+C:\Users\Dawid\Desktop\deadline\Space-Invaders\Space Invaders\Player.cpp;C:\Users\Dawid\Desktop\deadline\Space-Invaders\Space Invaders\Space Invaders\Debug\Player.obj
+C:\Users\Dawid\Desktop\deadline\Space-Invaders\Space Invaders\RockWall.cpp;C:\Users\Dawid\Desktop\deadline\Space-Invaders\Space Invaders\Space Invaders\Debug\RockWall.obj
+C:\Users\Dawid\Desktop\deadline\Space-Invaders\Space Invaders\Space Invaders.cpp;C:\Users\Dawid\Desktop\deadline\Space-Invaders\Space Invaders\Space Invaders\Debug\Space Invaders.obj
+C:\Users\Dawid\Desktop\deadline\Space-Invaders\Space Invaders\TableScore.cpp;C:\Users\Dawid\Desktop\deadline\Space-Invaders\Space Invaders\Space Invaders\Debug\TableScore.obj
+C:\Users\Dawid\Desktop\deadline\Space-Invaders\Space Invaders\TextInput.cpp;C:\Users\Dawid\Desktop\deadline\Space-Invaders\Space Invaders\Space Invaders\Debug\TextInput.obj
+C:\Users\Dawid\Desktop\deadline\Space-Invaders\Space Invaders\TitleScreen.cpp;C:\Users\Dawid\Desktop\deadline\Space-Invaders\Space Invaders\Space Invaders\Debug\TitleScreen.obj
+C:\Users\Dawid\Desktop\deadline\Space-Invaders\Space Invaders\Weapon.cpp;C:\Users\Dawid\Desktop\deadline\Space-Invaders\Space Invaders\Space Invaders\Debug\Weapon.obj
+C:\Users\Dawid\Desktop\deadline\Space-Invaders\Space Invaders\Window.cpp;C:\Users\Dawid\Desktop\deadline\Space-Invaders\Space Invaders\Space Invaders\Debug\Window.obj
+C:\Users\Dawid\Desktop\deadline\Space-Invaders\Space Invaders\Window.hpp;C:\Users\Dawid\Desktop\deadline\Space-Invaders\Space Invaders\Space Invaders\Debug\Window.obj

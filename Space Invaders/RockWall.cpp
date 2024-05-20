@@ -1,5 +1,7 @@
 #include "RockWall.hpp"
 
+
+
 RockWall::RockWall(int xPostion, int yPostion) :
 	health(5)
 {
@@ -19,12 +21,17 @@ const int RockWall::getHealt()
     return this->health;
 }
 
-void RockWall::render(sf::RenderWindow* window)
+void RockWall::setPosition(float& x, float& y)
+{
+    this->rock.setPosition(x, y);
+}
+
+void RockWall::draw(sf::RenderWindow* window)
 {
     window->draw(this->rock);
 }
 
-const sf::Sprite RockWall::getShape()
+const sf::Sprite& RockWall::getShape()
 {
     return this->rock;
 }

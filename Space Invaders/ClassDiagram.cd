@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="GraphicalObject" Collapsed="true">
+    <Position X="3.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAAAAIAAAACAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>GraphicalObject.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MoveableGraphicalObject" Collapsed="true">
+    <Position X="2.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAEAABAAA=</HashCode>
+      <FileName>MoveableGraphicalObject.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Enemy" Collapsed="true">
+    <Position X="2.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIgAAAAAAAACBAAIAAAACAAAAAAAAAAAAQAQIAAA=</HashCode>
+      <FileName>Enemy.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Player" Collapsed="true">
+    <Position X="0.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAIBAgQAAAAACACAAAIAAAQCAAAAIAAAAAAEAQQQAAA=</HashCode>
+      <FileName>Player.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RockWall" Collapsed="true">
+    <Position X="5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAAAAIACAJCAAAAAAAEIAAAAAQAAAg=</HashCode>
+      <FileName>RockWall.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextInput" Collapsed="true">
+    <Position X="12.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAkAAhAAKABCAABIICAAABBAAEAAIAAAAAAAAIAA=</HashCode>
+      <FileName>TextInput.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Weapon" Collapsed="true">
+    <Position X="5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAQDBAAIAAAACAAAAAAgAAAAAUAQAAAA=</HashCode>
+      <FileName>Weapon.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Game" Collapsed="true">
+    <Position X="8.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ALgIAoCAAAAAEABAAAIIAgIAAUmMACCpQABDIAgUgAA=</HashCode>
+      <FileName>Game.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TableScore" Collapsed="true">
+    <Position X="10.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAQAAAABBAACAIAAIAABAAAAAIAAAAgAAAAAA=</HashCode>
+      <FileName>TableScore.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TitleScreen" Collapsed="true">
+    <Position X="14" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EIIAAAAAAgEAACACQAIAAAEBAFEAAAIIAIAAAAmIAFA=</HashCode>
+      <FileName>TitleScreen.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Window" Collapsed="true">
+    <Position X="13" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AMAAAAAAAAAAAAAAAAAAAAAAAQEAAAAIAIAACCAAAAA=</HashCode>
+      <FileName>Window.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResourceManager" Collapsed="true">
+    <Position X="9.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAoIAACAAACACBAAAAAAEAAAAAAAAAQIAAEAEAAIAAA=</HashCode>
+      <FileName>ResourcesManger.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

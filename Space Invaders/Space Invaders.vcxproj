@@ -140,6 +140,7 @@
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Enemy.hpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="MoveableGraphicalObject.h" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="RockWall.cpp" />
     <ClCompile Include="Space Invaders.cpp" />
@@ -151,8 +152,8 @@
     <ClCompile Include="Window.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DrawableObject.hpp" />
     <ClInclude Include="Game.hpp" />
+    <ClInclude Include="GraphicalObject.h" />
     <ClInclude Include="Player.hpp" />
     <ClInclude Include="ResourcesManger.hpp" />
     <ClInclude Include="RockWall.hpp" />
@@ -160,6 +161,9 @@
     <ClInclude Include="TextInput.hpp" />
     <ClInclude Include="TitleScreen.hpp" />
     <ClInclude Include="Weapon.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

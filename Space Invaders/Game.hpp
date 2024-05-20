@@ -8,6 +8,8 @@
 //import <iostream>;
 #include <random>
 #include <thread>
+#include <vector>
+#include <memory>
 class Game {
 public:
     Game(sf::RenderWindow *window);
@@ -26,6 +28,9 @@ private:
     int level;
     void intLevel();
 
+    void draw();
+    std::vector<std::shared_ptr<GraphicalObject>> graphicalObjects;
+
     std::shared_ptr<Player> player;
     void initPlayer(std::string texturePath);
     bool playerFired;
@@ -36,6 +41,8 @@ private:
     std::string enemyTexturePath;
     void spawnEnemy(float xPos, float yPos, const std::string& texturePath); // Function to spawn enemies
     void setEnemies();
+    int sideToMoveEnemies;
+    void setMoveEnemiesColumn();
     int enemyReload;
     int enemyNumber;
     void randomEnemyShoot();

@@ -1,8 +1,8 @@
 #include "TextInput.hpp"
 #include <iostream>
 
-TextInput::TextInput(sf::RenderWindow *window,sf::Font* font) :
-    window(window),font(font)
+TextInput::TextInput(sf::RenderWindow *window,sf::Font* font,int score) :
+    window(window),font(font),score(score)
 {
     if (!font) {
         std::cerr << "Null pointer to font." << std::endl;
@@ -13,6 +13,8 @@ TextInput::TextInput(sf::RenderWindow *window,sf::Font* font) :
 
 void TextInput::draw(sf::RenderWindow* window) {
     window->draw(titleOfWindow);
+    window->draw(gameover);
+    window->draw(tscore);
     window->draw(background);
     window->draw(okButton);
     window->draw(sfText);
@@ -54,11 +56,23 @@ void TextInput::initText() {
     titleOfWindow.setCharacterSize(26);
     titleOfWindow.setFillColor(sf::Color::White);
     titleOfWindow.setOrigin(titleOfWindow.getLocalBounds().getSize().x / 2, 0);
-    titleOfWindow.setPosition(window->getSize().x / 2,  (window->getSize().y / 2)-100);
+    titleOfWindow.setPosition(window->getSize().x / 2,  (window->getSize().y / 2)-80);
     
+    gameover.setFont(*(this->font));
+    gameover.setString("GAME OVER");
+    gameover.setCharacterSize(36);
+    gameover.setFillColor(sf::Color::White);
+    gameover.setOrigin(gameover.getLocalBounds().getSize().x / 2, 0);
+    gameover.setPosition(window->getSize().x / 2, (window->getSize().y *0.1) );
+
+    tscore.setFont(*(this->font));
+    tscore.setString("Your Score: "+std::to_string(score));
+    tscore.setCharacterSize(26);
+    tscore.setFillColor(sf::Color::White);
+    tscore.setOrigin(tscore.getLocalBounds().getSize().x / 2, 0);
+    tscore.setPosition(window->getSize().x / 2, (window->getSize().y * 0.25));
     
     sfText.setFont(*font);
-
     sfText.setCharacterSize(24);
     sfText.setFillColor(sf::Color::White);
     sfText.setString("OK");

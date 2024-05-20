@@ -1,6 +1,6 @@
 #include "Game.hpp"
 
-Game::Game(sf::RenderWindow *window) : window(window), isRunning(true) {
+Game::Game(sf::RenderWindow *window) : window(window), isRunning(true),sideToMoveEnemies(1) {
     this->enemyTexturePath = "Assets/Texture/enemyTexture.png";
     this->initPlayer("Assets/Texture/playerTexture.png");
     //this->setEnemies();
@@ -12,6 +12,8 @@ Game::Game(sf::RenderWindow *window) : window(window), isRunning(true) {
     this->initFonts();
     
     this->level = 0;
+
+    
 }
 
 Game::~Game() {}
@@ -48,13 +50,18 @@ void Game::processEvents() {
 
     }
 
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
-        this->player->movePlayer(1);
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
+        float tempx = 7.0f;
+        float tempy = 0.0f;
+        this->player->move(tempx, tempy);
+    }
 
 
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
-        this->player->movePlayer(-1);
-
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
+        float tempx = -7.0f;
+        float tempy = 0.0f;
+        this->player->move(tempx,tempy);
+    }
 }
 
 void Game::update() {
@@ -99,7 +106,7 @@ void Game::render() {
    
 
     window->clear();
-    // Drawn game
+ 
 
     if (this->enemies.empty()) {
         
@@ -110,10 +117,11 @@ void Game::render() {
 
 
     //Drawing enemies
+    /*
     for (const auto& enemy : enemies) {
         enemy->draw(this->window);
     }
-    
+    */
 
     this->checkAndHandleEnemyCollison();
     this->checkIfPlayerIsHit();
@@ -136,13 +144,14 @@ void Game::render() {
         this->playerCounterReload = 0;
     }
     //Drawing player
-    this->player->draw(this->window);
+    //this->player->draw(this->window);
 
-    this->window->draw(this->scoreOfPlayer);
-    this->drawRockWalls();
+    
+    //this->drawRockWalls();
 
     //supportLine(this->window);
-
+    this->draw();
+    setMoveEnemiesColumn();
     window->display();
 }
 
@@ -166,10 +175,21 @@ void Game::intLevel()
     window->display();
     std::this_thread::sleep_for(std::chrono::seconds(2));
     window->clear();
-    this->player->setPostion(this->window->getSize().x/2-(this->player->getPlayerSprite().getLocalBounds().getSize().x/2));
+    float tempy = 0;
+    float tempx=((this->window->getSize().x / 2) - (this->player->getPlayerSprite().getLocalBounds().getSize().x / 2));
+    this->player->setPosition(tempx,tempy);
     
     this->initRockWalls();
     this->setEnemies();
+    graphicalObjects.push_back(this->player);
+}
+
+void Game::draw()
+{
+    this->window->draw(this->scoreOfPlayer);
+    for (const auto& object : graphicalObjects) {
+        object->draw(window); // Call the draw method on each GraphicalObject
+    }
 }
 
 void Game::initPlayer(std::string texturePath)
@@ -182,6 +202,7 @@ void Game::spawnEnemy(float xPos, float yPos, const std::string& texturePath) {
     this->enemyNumber++;
     std::shared_ptr<Enemy> newEnemy = std::make_shared<Enemy>(xPos, yPos, texturePath,this->level);
     enemies.push_back(newEnemy);
+    graphicalObjects.push_back(newEnemy);
 }
 
 void Game::setEnemies() {
@@ -193,11 +214,11 @@ void Game::setEnemies() {
     }
     else {
         //setting postion of enemies
-        float XsizeOfEnemy = Texture.getSize().x * 1.5;
+        float XsizeOfEnemy = Texture.getSize().x * 2;
         int NumberOfEnemeisColumns = (this->window->getSize().x * 0.8) / XsizeOfEnemy;
         float spacingBetweenColumns = ((this->window->getSize().x * 0.8) - (NumberOfEnemeisColumns * XsizeOfEnemy)) / NumberOfEnemeisColumns;
 
-        float YsizeOfEnemy = Texture.getSize().y * 1.5;
+        float YsizeOfEnemy = Texture.getSize().y * 2;
         int NumberOfEnemeisRows = (this->window->getSize().y * 0.4) / XsizeOfEnemy;
         float spacingBetweenRows = ((this->window->getSize().y * 0.4) - (NumberOfEnemeisRows * YsizeOfEnemy)) / NumberOfEnemeisRows;
 
@@ -214,6 +235,44 @@ void Game::setEnemies() {
    
 }
 
+void Game::setMoveEnemiesColumn() {
+    // Random number generator engine
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    
+    // Define the range for the random number
+    std::uniform_int_distribution<> dis(1, 40-2*level);
+    int randomNumber = dis(gen);
+    //std::cout << sideToMoveEnemies << "Random number between 1 and 1000: " << randomNumber << std::endl;
+    
+    // Initialize variables
+    bool isAnyEnemyOutsideXBounds = false;
+    float moveX = 1.5 * sideToMoveEnemies;
+    float moveY = 0;
+    if (randomNumber == 30)
+        moveY = 10;
+
+    // Loop through enemies
+    for (auto it = this->enemies.begin(); it != this->enemies.end(); ++it) {
+        // Check if the enemy is within the X bounds of the window
+        bool isEnemyWithinXBounds = ((*it)->getPosition().x + moveX > 0) &&
+                                    ((*it)->getPosition().x + (*it)->getShape().getGlobalBounds().width + moveX < window->getSize().x);
+
+        // Move the enemy if it's within the X bounds
+        if (isEnemyWithinXBounds) {
+            (*it)->move(moveX, moveY);
+        } else {
+            isAnyEnemyOutsideXBounds = true;
+        }
+    }
+
+    // Update movement direction if any enemy is outside the X bounds
+    if (isAnyEnemyOutsideXBounds) {
+        sideToMoveEnemies *= -1;
+    }
+}
+
+
 void Game::randomEnemyShoot()
 {
     if (this->enemyReload < this->clock) {
@@ -229,18 +288,47 @@ void Game::randomEnemyShoot()
 
 
 void Game::checkAndHandleEnemyCollison() {
-
     for (auto it = this->enemies.begin(); it != this->enemies.end();) {
-
-        if (this->player->playerWeapon->detectCollison((*it)->getShape()))
-        {
+        if (this->player->playerWeapon->collisionDetection((*it)->getShape())) {
             score++;
             this->scoreOfPlayer.setString("Score: " + std::to_string(this->score));
-            it=this->enemies.erase(it);
+
+            auto enemyPtr = *it; // Save the shared_ptr for removal
+
+            // Remove the enemy from both vectors
+            auto removeFromVector = [](auto& vec, const auto& item) {
+                vec.erase(std::remove(vec.begin(), vec.end(), item), vec.end());
+                };
+            removeFromVector(graphicalObjects, enemyPtr);
+            removeFromVector(enemies, enemyPtr);
+            //it = this->enemies.erase(it);
         }
-        else
-        ++it;
+        else {
+            ++it;
         }
+    }
+    for (auto it = this->enemies.begin(); it != this->enemies.end();) {
+        if ((*it)->getPosition().y+ (*it)->getShape().getGlobalBounds().getSize().y>= window->getSize().y) {
+            this->player->playerHitted();
+
+            if (this->player->getPlayerHealth() <= 0)
+            {
+                //std::cout << "Game Over" << std::endl;
+                this->isRunning = false;
+            }
+            auto enemyPtr = *it; // Save the shared_ptr for removal
+
+            // Remove the enemy from both vectors
+            auto removeFromVector = [](auto& vec, const auto& item) {
+                vec.erase(std::remove(vec.begin(), vec.end(), item), vec.end());
+                };
+            removeFromVector(graphicalObjects, enemyPtr);
+            removeFromVector(enemies, enemyPtr);
+        }
+        else {
+            ++it;
+        }
+    }
 
 
 }
@@ -249,15 +337,24 @@ void Game::checkIfPlayerIsHit() {
 
     for (auto it = this->enemies.begin(); it != this->enemies.end();) {
 
-        if ((*it)->enemyWeapon->detectCollison((this->player->getPlayerSprite())))
+        if ((*it)->enemyWeapon->collisionDetection((this->player->getPlayerSprite())) ||
+            (*it)->getShape().getGlobalBounds().intersects(this->player->getPlayerSprite().getGlobalBounds()))
         {
             this->player->playerHitted();
 
             if (this->player->getPlayerHealth() <= 0)
             {
-                std::cout << "You lose" << std::endl;
+                //std::cout << "Game Over" << std::endl;
                 this->isRunning = false;
             }
+            auto enemyPtr = *it; // Save the shared_ptr for removal
+
+            // Remove the enemy from both vectors
+            auto removeFromVector = [](auto& vec, const auto& item) {
+                vec.erase(std::remove(vec.begin(), vec.end(), item), vec.end());
+                };
+            removeFromVector(graphicalObjects, enemyPtr);
+            removeFromVector(enemies, enemyPtr);
         }
        
         else
@@ -302,7 +399,9 @@ void Game::initRockWalls()
             float spacing = ((this->window->getSize().x * 0.8) - (Texture.getSize().x * 1.5 * number_of_rocks)) / number_of_rocks;
             for (int i = 0; i < number_of_rocks; i++) {
                 std::shared_ptr<RockWall> newRock = std::make_shared<RockWall>((this->window->getSize().x * 0.1) + i * (spacing + (Texture.getSize().x * 2)), this->window->getSize().y * 0.7);
+                graphicalObjects.push_back(newRock);
                 this->rockWalls.push_back(newRock);
+                
             }
         }
 }
@@ -310,29 +409,83 @@ void Game::initRockWalls()
 void Game::drawRockWalls()
 {
         for (const auto& rock : this->rockWalls) {
-            rock->render(window);
+            rock->draw(window);
         }
    
 }
 
-void Game::checkIfEnemyHittedRockWall()
-{
+void Game::checkIfEnemyHittedRockWall() {
+    for (auto it = this->enemies.begin(); it != this->enemies.end(); ) {
+        bool collisionDetected = false; // Flag to track if a collision was detected
+        for (auto rock = this->rockWalls.begin(); rock != this->rockWalls.end(); ++rock) {
+            if ((*it)->getShape().getGlobalBounds().intersects((*rock)->getShape().getGlobalBounds())) {
+                // Collision detected
+                collisionDetected = true;
 
-    for (auto it = this->enemies.begin(); it != this->enemies.end();) {
+                auto enemyPtr = *it; // Save the shared_ptr for removal
 
-        for (auto rock = this->rockWalls.begin(); rock != this->rockWalls.end();) {
-
-            if ((*it)->enemyWeapon->detectCollison((*rock)->getShape()))
-            {
+                // Remove the enemy from both vectors
+                auto removeFromVector = [](auto& vec, const auto& item) {
+                    vec.erase(std::remove(vec.begin(), vec.end(), item), vec.end());
+                    };
+                removeFromVector(graphicalObjects, enemyPtr);
+                removeFromVector(enemies, enemyPtr);
                 (*rock)->hitted();
                 if ((*rock)->getHealt() == 1) {
-                    rock = this->rockWalls.erase(rock);
+                    auto rockWallPtr = *rock;  // Save the shared_ptr for removal
+
+                    // Remove rock wall from both vectors
+                    auto removeFromVector = [](auto& vec, const auto& item) {
+                        vec.erase(std::remove(vec.begin(), vec.end(), item), vec.end());
+                        };
+                    removeFromVector(graphicalObjects, rockWallPtr);
+                    removeFromVector(rockWalls, rockWallPtr);
+
+                    // Update iterator after removal
+                    //rock = this->rockWalls.erase(rock);
+
+
                 }
+                else {
+                    ++rock;
+                }
+                break; // Break out of the inner loop since the enemy has been removed
             }
-            else
-                ++rock;
         }
-        ++it;
+        if (!collisionDetected) {
+            // No collision detected, move to the next enemy
+            ++it;
+        }
     }
 
+
+    for (auto it = this->enemies.begin(); it != this->enemies.end(); ++it) {
+        for (auto rock = this->rockWalls.begin(); rock != this->rockWalls.end(); ) {
+            if ((*it)->enemyWeapon->collisionDetection((*rock)->getShape())) {
+                (*rock)->hitted();
+                if ((*rock)->getHealt() == 1) {
+                    auto rockWallPtr = *rock;  // Save the shared_ptr for removal
+
+                    // Remove rock wall from both vectors
+                    auto removeFromVector = [](auto& vec, const auto& item) {
+                        vec.erase(std::remove(vec.begin(), vec.end(), item), vec.end());
+                        };
+                    removeFromVector(graphicalObjects, rockWallPtr);
+                    removeFromVector(rockWalls, rockWallPtr);
+
+                    // Update iterator after removal
+                    //rock = this->rockWalls.erase(rock);
+
+
+                }
+                else {
+                    ++rock;
+                }
+            }
+            else {
+                ++rock;
+            }
+        }
+
+    }
 }

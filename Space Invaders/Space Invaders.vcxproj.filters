@@ -22,23 +22,17 @@
     <Filter Include="Pliki nagłówkowe\Resources">
       <UniqueIdentifier>{0c49bf18-7cf1-443b-a585-185eefb819ec}</UniqueIdentifier>
     </Filter>
+    <Filter Include="VirtuallClasses">
+      <UniqueIdentifier>{5e8a0f79-03cd-4bef-aab6-7b02c81a69fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki źródłowe\Windows">
+      <UniqueIdentifier>{c59c5fb6-9b25-49c8-b71e-0a58a9340fd2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki nagłówkowe\Windows">
+      <UniqueIdentifier>{5a15b3fb-49d5-497b-9275-2eee6418046d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Space Invaders.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-    <ClCompile Include="Window.hpp">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClCompile>
-    <ClCompile Include="Window.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-    <ClCompile Include="Game.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-    <ClCompile Include="TitleScreen.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
     <ClCompile Include="Player.cpp">
       <Filter>Pliki źródłowe\GameObjects</Filter>
     </ClCompile>
@@ -54,23 +48,32 @@
     <ClCompile Include="RockWall.cpp">
       <Filter>Pliki źródłowe\GameObjects</Filter>
     </ClCompile>
-    <ClCompile Include="TableScore.cpp">
-      <Filter>Pliki źródłowe</Filter>
+    <ClCompile Include="MoveableGraphicalObject.h">
+      <Filter>VirtuallClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="Window.cpp">
+      <Filter>Pliki źródłowe\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="TitleScreen.cpp">
+      <Filter>Pliki źródłowe\Windows</Filter>
     </ClCompile>
     <ClCompile Include="TextInput.cpp">
+      <Filter>Pliki źródłowe\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="TableScore.cpp">
+      <Filter>Pliki źródłowe\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="Window.hpp">
+      <Filter>Pliki nagłówkowe\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Pliki źródłowe\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="Space Invaders.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DrawableObject.hpp">
-      <Filter>Pliki nagłówkowe\GameObjects</Filter>
-    </ClInclude>
-    <ClInclude Include="Game.hpp">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="TitleScreen.hpp">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
     <ClInclude Include="Player.hpp">
       <Filter>Pliki nagłówkowe\GameObjects</Filter>
     </ClInclude>
@@ -83,11 +86,23 @@
     <ClInclude Include="RockWall.hpp">
       <Filter>Pliki nagłówkowe\GameObjects</Filter>
     </ClInclude>
-    <ClInclude Include="TableScore.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
     <ClInclude Include="TextInput.hpp">
       <Filter>Pliki nagłówkowe\GameObjects</Filter>
     </ClInclude>
+    <ClInclude Include="GraphicalObject.h">
+      <Filter>VirtuallClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleScreen.hpp">
+      <Filter>Pliki nagłówkowe\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.hpp">
+      <Filter>Pliki nagłówkowe\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="TableScore.h">
+      <Filter>Pliki nagłówkowe\Windows</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
 </Project>

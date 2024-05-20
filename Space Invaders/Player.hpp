@@ -4,19 +4,24 @@
 #include <SFML/Graphics.hpp>
 #include "iostream"
 #include "Weapon.hpp"
-class Player {
+#include "MoveableGraphicalObject.h"
+
+class Player : public MoveableGraphicalObject {
 public:
     Player(int xPos, int yPos, const std::string& playerTexturePath);
 
-    void draw(sf::RenderWindow* window);
-    void movePlayer(int direction);
+    void draw(sf::RenderWindow* window) override;
+
 
     Weapon* playerWeapon;
 
     const sf::Sprite getPlayerSprite();
-    void setPostion(int xPos);
+    void setPosition(float& x, float& y) override;
     const int getPlayerHealth();
     void playerHitted();
+
+    const sf::Sprite& getShape() override;
+    void move(float& x, float& y) override;
 private:
     int playerHealth;
     void initWeapon();

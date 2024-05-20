@@ -5,16 +5,21 @@
 #include <vector>
 #include <memory>
 #include <iostream>
+#include "MoveableGraphicalObject.h"
 
-class Weapon {
+class Weapon : MoveableGraphicalObject {
 public:
     Weapon(const std::string& texturePath, int directionofBulletUp,int bulletSpeed);
     void clearMagazine();
     void addNewBullet(float xPostion, float yPostion);
-    void draw(sf::RenderWindow* window);
-    bool detectCollison(sf::Sprite target);
+    void draw(sf::RenderWindow* window) override;
+    bool collisionDetection(const sf::Sprite& anotherObject) override;
     
+   
 private:
+    void setPosition(float& x, float& y) override;
+    const sf::Sprite& getShape() override;
+    void move(float& x, float& y) override;
     int directionofBulletUp;//if it s true bullets fly up if false bullets fly down
     int bulletSpeed;
     

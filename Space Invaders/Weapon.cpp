@@ -53,12 +53,12 @@ void Weapon::draw(sf::RenderWindow* window) {
     }
 }
 
-bool Weapon::detectCollison(sf::Sprite target)
+bool Weapon::collisionDetection(const sf::Sprite& anotherObject)
 {
     for (auto it = this->bullets.begin(); it != this->bullets.end();) {
 
         //if target is shooted
-        if ((*it)->getGlobalBounds().intersects(target.getGlobalBounds())) {
+        if ((*it)->getGlobalBounds().intersects(anotherObject.getGlobalBounds())) {
             it = this->bullets.erase(it);
             return true;
         }
@@ -67,5 +67,19 @@ bool Weapon::detectCollison(sf::Sprite target)
     }
     return false;
 
+}
+
+void Weapon::setPosition(float& x, float& y)
+{
+}
+
+const sf::Sprite& Weapon::getShape()
+{
+    sf::Sprite sprite;
+    return sprite;
+}
+
+void Weapon::move(float& x, float& y)
+{
 }
 

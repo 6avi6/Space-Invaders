@@ -3,14 +3,15 @@
 
 #include <SFML/Graphics.hpp>
 #include "iostream"
-
-class RockWall {
+#include "GraphicalObject.h"
+class RockWall : public GraphicalObject {
 public:
 	RockWall(int xPostion, int yPostion);
 	void hitted();
 	const int getHealt();
-	void render(sf::RenderWindow* window);
-	const sf::Sprite getShape();
+	void setPosition(float& x, float& y) override;
+	void draw(sf::RenderWindow* window) override;
+	const sf::Sprite& getShape() override;
 private:
 	int health;
 	

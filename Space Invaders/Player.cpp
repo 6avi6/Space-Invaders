@@ -40,12 +40,6 @@ void Player::draw(sf::RenderWindow *window) {
     this->drawHealthBar(window);
 }
 
-void Player::movePlayer(int direction=0)
-{
-        this->playerSprite.setPosition(playerSprite.getPosition().x + 7.f * direction, playerSprite.getPosition().y);
-
-       
-}
 
 void Player::initWeapon()
 {
@@ -69,9 +63,9 @@ const sf::Sprite Player::getPlayerSprite()
     return this->playerSprite;
 }
 
-void Player::setPostion(int xPos)
+void Player::setPosition(float& x, float& y)
 {
-    this->playerSprite.setPosition(xPos, this->playerSprite.getPosition().y);
+    this->playerSprite.setPosition(x, this->playerSprite.getPosition().y);
 }
 
 const int Player::getPlayerHealth()
@@ -82,6 +76,16 @@ const int Player::getPlayerHealth()
 void Player::playerHitted()
 {
     --this->playerHealth;
+}
+
+const sf::Sprite& Player::getShape()
+{
+    return this->playerSprite;
+}
+
+void Player::move(float& x, float& y)
+{
+    this->playerSprite.setPosition(playerSprite.getPosition().x + x, playerSprite.getPosition().y);
 }
 
 

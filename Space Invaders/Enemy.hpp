@@ -4,16 +4,21 @@
 #include <SFML/Graphics.hpp>
 #include "iostream"
 #include "Weapon.hpp"
+#include "MoveableGraphicalObject.h"
 
-class Enemy {
+class Enemy:public MoveableGraphicalObject {
 public:
+
     Enemy(float xPos, float yPos, const std::string& texturePath,int levelBonus);
 
-    void setPosition(float xPos, float yPos);
+    void setPosition(float& x, float& y);
     sf::Vector2f getPosition() const;
 
-    void draw(sf::RenderWindow* window);
-    const sf::Sprite getShape();
+    //first abstract class
+    void draw(sf::RenderWindow* window) override;
+    const sf::Sprite& getShape() override;
+    //second abstract class
+    void move(float& x, float& y) override;
 
     Weapon* enemyWeapon;
 private:
