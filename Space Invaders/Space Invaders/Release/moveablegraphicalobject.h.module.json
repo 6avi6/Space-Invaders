@@ -1,0 +1,22 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "Space Invaders\\Release\\MoveableGraphicalObject.h.obj",
+            "outputs": [
+                "C:\\Users\\Dawid\\Desktop\\deadline\\Space-Invaders\\Space Invaders\\Space Invaders\\Release\\vc143.pdb",
+                "Space Invaders\\Release\\",
+                "C:\\Users\\Dawid\\Desktop\\deadline\\Space-Invaders\\Space Invaders\\Space Invaders\\Release\\MoveableGraphicalObject.h.ifc"
+            ],
+            "provides": [
+                {
+                    "logical-name": "MoveableGraphicalObject.h",
+                    "source-path": "c:\\users\\dawid\\desktop\\deadline\\space-invaders\\space invaders\\moveablegraphicalobject.h",
+                    "lookup-method": "absolute"
+                }
+            ],
+            "requires": []
+        }
+    ]
+}

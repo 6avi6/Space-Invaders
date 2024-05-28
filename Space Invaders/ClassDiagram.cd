@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="GraphicalObject" Collapsed="true">
-    <Position X="3.75" Y="2.5" Width="1.5" />
+    <Position X="3.75" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAQAAAAAAAAAAAAIAAAACAAAAAAAAAAAAAAQAAAA=</HashCode>
       <FileName>GraphicalObject.h</FileName>
@@ -14,14 +14,14 @@
       <FileName>MoveableGraphicalObject.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Enemy" Collapsed="true">
+  <Class Name="Enemy">
     <Position X="2.75" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAIgAAAAAAAACBAAIAAAACAAAAAAAAAAAAQAQIAAA=</HashCode>
       <FileName>Enemy.hpp</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Player" Collapsed="true">
+  <Class Name="Player">
     <Position X="0.5" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>gAIBAgQAAAAACACAAAIAAAQCAAAAIAAAAAAEAQQQAAA=</HashCode>
@@ -42,7 +42,7 @@
       <FileName>TextInput.hpp</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Weapon" Collapsed="true">
+  <Class Name="Weapon">
     <Position X="5" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAIAAAQDBAAIAAAACAAAAAAgAAAAAUAQAAAA=</HashCode>
